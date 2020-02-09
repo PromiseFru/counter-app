@@ -5,9 +5,9 @@ class Counter extends Component {
         count: 0,
     };
 
-    handleIncrement(){
-        console.log('Increment Clicked');
-    }
+    handleIncrement = () => {
+        this.setState({count: this.state.count + 1});
+    };
 
     render() { 
         return (
@@ -20,12 +20,12 @@ class Counter extends Component {
 
     getBadgeClasses() {
         let classes = "badge m-2 badge-";
-        classes += this.state.count == 0 ? "warning" : "primary";
+        classes += this.state.count === 0 ? "warning" : "primary";
         return classes;
     }
 
     formatCounter(){
-        if(this.state.count == 0){
+        if(this.state.count === 0){
             return 'zero';
         }else{
             return this.state.count;
